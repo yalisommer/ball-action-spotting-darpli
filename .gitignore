@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# video data
+*.mp4
+path/to/SoccerNet/spotting-ball-2024/england_efl/2019-2020
