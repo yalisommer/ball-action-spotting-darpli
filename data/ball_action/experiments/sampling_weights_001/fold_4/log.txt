@@ -1,0 +1,131 @@
+[2023-04-21 02:40:24,129][INFO]: train - epoch: 0, lr: 5e-05, train_loss: 0.2491324
+[2023-04-21 02:42:14,078][INFO]: val - epoch: 0, val_loss: 0.2752409, val_average_precision: 0.3543393, val_average_precision_pass: 0.4601774, val_average_precision_drive: 0.2485011, val_binary_accuracy: 0.7371226, val_binary_accuracy_pass: 0.6884547, val_binary_accuracy_drive: 0.7857904
+[2023-04-21 02:50:50,186][INFO]: train - epoch: 1, lr: 0.0001, train_loss: 0.2049217
+[2023-04-21 02:52:40,129][INFO]: val - epoch: 1, val_loss: 0.2259013, val_average_precision: 0.6213793, val_average_precision_pass: 0.7152873, val_average_precision_drive: 0.5274713, val_binary_accuracy: 0.7980462, val_binary_accuracy_pass: 0.782238, val_binary_accuracy_drive: 0.8138544
+[2023-04-21 03:01:16,336][INFO]: train - epoch: 2, lr: 0.00015, train_loss: 0.1881299
+[2023-04-21 03:03:06,434][INFO]: val - epoch: 2, val_loss: 0.20169, val_average_precision: 0.6974884, val_average_precision_pass: 0.7859178, val_average_precision_drive: 0.6090589, val_binary_accuracy: 0.7946714, val_binary_accuracy_pass: 0.7950266, val_binary_accuracy_drive: 0.7943162
+[2023-04-21 03:11:44,856][INFO]: train - epoch: 3, lr: 0.0002, train_loss: 0.182932
+[2023-04-21 03:13:35,216][INFO]: val - epoch: 3, val_loss: 0.1934119, val_average_precision: 0.7276496, val_average_precision_pass: 0.8077276, val_average_precision_drive: 0.6475715, val_binary_accuracy: 0.8007105, val_binary_accuracy_pass: 0.7943162, val_binary_accuracy_drive: 0.8071048
+[2023-04-21 03:22:13,874][INFO]: train - epoch: 4, lr: 0.00025, train_loss: 0.1818964
+[2023-04-21 03:24:04,029][INFO]: val - epoch: 4, val_loss: 0.178612, val_average_precision: 0.7516455, val_average_precision_pass: 0.8183483, val_average_precision_drive: 0.6849427, val_binary_accuracy: 0.8225577, val_binary_accuracy_pass: 0.8124334, val_binary_accuracy_drive: 0.8326821
+[2023-04-21 03:32:38,971][INFO]: train - epoch: 5, lr: 0.0003, train_loss: 0.1726712
+[2023-04-21 03:34:29,026][INFO]: val - epoch: 5, val_loss: 0.1784889, val_average_precision: 0.7564267, val_average_precision_pass: 0.817687, val_average_precision_drive: 0.6951664, val_binary_accuracy: 0.8227353, val_binary_accuracy_pass: 0.8110124, val_binary_accuracy_drive: 0.8344583
+[2023-04-21 03:44:55,471][INFO]: train - epoch: 0, lr: 0.00029919, train_loss: 0.1731992
+[2023-04-21 03:46:45,640][INFO]: val - epoch: 0, val_loss: 0.1717817, val_average_precision: 0.7702449, val_average_precision_pass: 0.8241947, val_average_precision_drive: 0.7162951, val_binary_accuracy: 0.8296625, val_binary_accuracy_pass: 0.8220249, val_binary_accuracy_drive: 0.8373002
+[2023-04-21 03:46:45,733][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-000-0.770245.pth'
+[2023-04-21 03:55:20,460][INFO]: train - epoch: 1, lr: 0.00029675, train_loss: 0.1649435
+[2023-04-21 03:57:10,602][INFO]: val - epoch: 1, val_loss: 0.1662331, val_average_precision: 0.7810611, val_average_precision_pass: 0.8377254, val_average_precision_drive: 0.7243968, val_binary_accuracy: 0.8376554, val_binary_accuracy_pass: 0.8305506, val_binary_accuracy_drive: 0.8447602
+[2023-04-21 03:57:10,686][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-001-0.781061.pth'
+[2023-04-21 03:57:10,691][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-000-0.770245.pth'
+[2023-04-21 04:05:47,487][INFO]: train - epoch: 2, lr: 0.00029273, train_loss: 0.1609475
+[2023-04-21 04:07:37,592][INFO]: val - epoch: 2, val_loss: 0.1643591, val_average_precision: 0.7842307, val_average_precision_pass: 0.8369154, val_average_precision_drive: 0.731546, val_binary_accuracy: 0.8445826, val_binary_accuracy_pass: 0.8337478, val_binary_accuracy_drive: 0.8554174
+[2023-04-21 04:07:37,673][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-002-0.784231.pth'
+[2023-04-21 04:07:37,677][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-001-0.781061.pth'
+[2023-04-21 04:16:13,985][INFO]: train - epoch: 3, lr: 0.00028716, train_loss: 0.1564051
+[2023-04-21 04:18:04,501][INFO]: val - epoch: 3, val_loss: 0.1600679, val_average_precision: 0.7931646, val_average_precision_pass: 0.8464352, val_average_precision_drive: 0.739894, val_binary_accuracy: 0.8461812, val_binary_accuracy_pass: 0.8383659, val_binary_accuracy_drive: 0.8539964
+[2023-04-21 04:18:04,589][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-003-0.793165.pth'
+[2023-04-21 04:18:04,596][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-002-0.784231.pth'
+[2023-04-21 04:26:39,641][INFO]: train - epoch: 4, lr: 0.0002801, train_loss: 0.1543305
+[2023-04-21 04:28:29,855][INFO]: val - epoch: 4, val_loss: 0.1604748, val_average_precision: 0.7977734, val_average_precision_pass: 0.8552927, val_average_precision_drive: 0.740254, val_binary_accuracy: 0.8428064, val_binary_accuracy_pass: 0.8380107, val_binary_accuracy_drive: 0.8476021
+[2023-04-21 04:28:29,960][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-004-0.797773.pth'
+[2023-04-21 04:28:29,967][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-003-0.793165.pth'
+[2023-04-21 04:37:07,736][INFO]: train - epoch: 5, lr: 0.00027164, train_loss: 0.1497901
+[2023-04-21 04:38:57,923][INFO]: val - epoch: 5, val_loss: 0.159855, val_average_precision: 0.8006277, val_average_precision_pass: 0.8599394, val_average_precision_drive: 0.741316, val_binary_accuracy: 0.8440497, val_binary_accuracy_pass: 0.8348135, val_binary_accuracy_drive: 0.853286
+[2023-04-21 04:38:58,025][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-005-0.800628.pth'
+[2023-04-21 04:38:58,032][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-004-0.797773.pth'
+[2023-04-21 04:47:35,063][INFO]: train - epoch: 6, lr: 0.00026186, train_loss: 0.1423727
+[2023-04-21 04:49:25,180][INFO]: val - epoch: 6, val_loss: 0.156177, val_average_precision: 0.8129327, val_average_precision_pass: 0.8656678, val_average_precision_drive: 0.7601975, val_binary_accuracy: 0.849556, val_binary_accuracy_pass: 0.8362345, val_binary_accuracy_drive: 0.8628774
+[2023-04-21 04:49:25,280][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-006-0.812933.pth'
+[2023-04-21 04:49:25,287][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-005-0.800628.pth'
+[2023-04-21 04:58:01,076][INFO]: train - epoch: 7, lr: 0.00025087, train_loss: 0.1407895
+[2023-04-21 04:59:51,127][INFO]: val - epoch: 7, val_loss: 0.1549221, val_average_precision: 0.8130534, val_average_precision_pass: 0.869909, val_average_precision_drive: 0.7561978, val_binary_accuracy: 0.850444, val_binary_accuracy_pass: 0.8422735, val_binary_accuracy_drive: 0.8586146
+[2023-04-21 04:59:51,228][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-007-0.813053.pth'
+[2023-04-21 04:59:51,234][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-006-0.812933.pth'
+[2023-04-21 05:08:29,803][INFO]: train - epoch: 8, lr: 0.00023879, train_loss: 0.1386841
+[2023-04-21 05:10:20,024][INFO]: val - epoch: 8, val_loss: 0.1522958, val_average_precision: 0.8163289, val_average_precision_pass: 0.8691879, val_average_precision_drive: 0.76347, val_binary_accuracy: 0.8507993, val_binary_accuracy_pass: 0.8408526, val_binary_accuracy_drive: 0.860746
+[2023-04-21 05:10:20,215][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-008-0.816329.pth'
+[2023-04-21 05:10:20,222][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-007-0.813053.pth'
+[2023-04-21 05:18:57,600][INFO]: train - epoch: 9, lr: 0.00022575, train_loss: 0.136172
+[2023-04-21 05:20:48,005][INFO]: val - epoch: 9, val_loss: 0.1487892, val_average_precision: 0.8224029, val_average_precision_pass: 0.8736971, val_average_precision_drive: 0.7711086, val_binary_accuracy: 0.8577265, val_binary_accuracy_pass: 0.8511545, val_binary_accuracy_drive: 0.8642984
+[2023-04-21 05:20:48,112][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-009-0.822403.pth'
+[2023-04-21 05:20:48,119][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-008-0.816329.pth'
+[2023-04-21 05:29:25,399][INFO]: train - epoch: 10, lr: 0.0002119, train_loss: 0.1338048
+[2023-04-21 05:31:15,353][INFO]: val - epoch: 10, val_loss: 0.1487431, val_average_precision: 0.8215626, val_average_precision_pass: 0.8775601, val_average_precision_drive: 0.7655651, val_binary_accuracy: 0.8582593, val_binary_accuracy_pass: 0.8561279, val_binary_accuracy_drive: 0.8603908
+[2023-04-21 05:31:15,458][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-010-0.821563.pth'
+[2023-04-21 05:31:15,465][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-009-0.822403.pth'
+[2023-04-21 05:39:51,821][INFO]: train - epoch: 11, lr: 0.00019739, train_loss: 0.138699
+[2023-04-21 05:41:41,892][INFO]: val - epoch: 11, val_loss: 0.1450023, val_average_precision: 0.8307718, val_average_precision_pass: 0.8849678, val_average_precision_drive: 0.7765758, val_binary_accuracy: 0.8646536, val_binary_accuracy_pass: 0.859325, val_binary_accuracy_drive: 0.8699822
+[2023-04-21 05:41:41,997][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-011-0.830772.pth'
+[2023-04-21 05:41:42,003][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-010-0.821563.pth'
+[2023-04-21 05:50:19,182][INFO]: train - epoch: 12, lr: 0.00018237, train_loss: 0.1293368
+[2023-04-21 05:52:09,049][INFO]: val - epoch: 12, val_loss: 0.1436917, val_average_precision: 0.835494, val_average_precision_pass: 0.8879616, val_average_precision_drive: 0.7830264, val_binary_accuracy: 0.865897, val_binary_accuracy_pass: 0.8628774, val_binary_accuracy_drive: 0.8689165
+[2023-04-21 05:52:09,152][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-012-0.835494.pth'
+[2023-04-21 05:52:09,159][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-011-0.830772.pth'
+[2023-04-21 06:00:47,347][INFO]: train - epoch: 13, lr: 0.00016702, train_loss: 0.1259306
+[2023-04-21 06:02:37,404][INFO]: val - epoch: 13, val_loss: 0.1408023, val_average_precision: 0.8376079, val_average_precision_pass: 0.8930602, val_average_precision_drive: 0.7821555, val_binary_accuracy: 0.8667851, val_binary_accuracy_pass: 0.8650089, val_binary_accuracy_drive: 0.8685613
+[2023-04-21 06:02:37,502][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-013-0.837608.pth'
+[2023-04-21 06:02:37,509][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-012-0.835494.pth'
+[2023-04-21 06:11:15,291][INFO]: train - epoch: 14, lr: 0.0001515, train_loss: 0.1212125
+[2023-04-21 06:13:05,173][INFO]: val - epoch: 14, val_loss: 0.1407437, val_average_precision: 0.8373496, val_average_precision_pass: 0.8936428, val_average_precision_drive: 0.7810564, val_binary_accuracy: 0.8671403, val_binary_accuracy_pass: 0.8660746, val_binary_accuracy_drive: 0.868206
+[2023-04-21 06:13:05,276][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-014-0.837350.pth'
+[2023-04-21 06:13:05,282][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-013-0.837608.pth'
+[2023-04-21 06:21:41,511][INFO]: train - epoch: 15, lr: 0.00013598, train_loss: 0.121603
+[2023-04-21 06:23:32,172][INFO]: val - epoch: 15, val_loss: 0.1416445, val_average_precision: 0.8362174, val_average_precision_pass: 0.8904578, val_average_precision_drive: 0.781977, val_binary_accuracy: 0.8664298, val_binary_accuracy_pass: 0.8632327, val_binary_accuracy_drive: 0.869627
+[2023-04-21 06:23:32,279][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-015-0.836217.pth'
+[2023-04-21 06:23:32,286][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-014-0.837350.pth'
+[2023-04-21 06:32:11,512][INFO]: train - epoch: 16, lr: 0.00012063, train_loss: 0.1225802
+[2023-04-21 06:34:01,659][INFO]: val - epoch: 16, val_loss: 0.137002, val_average_precision: 0.8398231, val_average_precision_pass: 0.8966001, val_average_precision_drive: 0.7830461, val_binary_accuracy: 0.8690941, val_binary_accuracy_pass: 0.8678508, val_binary_accuracy_drive: 0.8703375
+[2023-04-21 06:34:01,847][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-016-0.839823.pth'
+[2023-04-21 06:34:01,854][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-015-0.836217.pth'
+[2023-04-21 06:42:36,993][INFO]: train - epoch: 17, lr: 0.00010561, train_loss: 0.1125659
+[2023-04-21 06:44:26,839][INFO]: val - epoch: 17, val_loss: 0.1354826, val_average_precision: 0.8443475, val_average_precision_pass: 0.900195, val_average_precision_drive: 0.7884999, val_binary_accuracy: 0.8706927, val_binary_accuracy_pass: 0.8699822, val_binary_accuracy_drive: 0.8714032
+[2023-04-21 06:44:26,941][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-017-0.844347.pth'
+[2023-04-21 06:44:26,949][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-016-0.839823.pth'
+[2023-04-21 06:53:05,524][INFO]: train - epoch: 18, lr: 9.11e-05, train_loss: 0.1110572
+[2023-04-21 06:54:55,514][INFO]: val - epoch: 18, val_loss: 0.1362481, val_average_precision: 0.8452613, val_average_precision_pass: 0.8983833, val_average_precision_drive: 0.7921392, val_binary_accuracy: 0.8703375, val_binary_accuracy_pass: 0.868206, val_binary_accuracy_drive: 0.8724689
+[2023-04-21 06:54:55,616][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-018-0.845261.pth'
+[2023-04-21 06:54:55,624][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-017-0.844347.pth'
+[2023-04-21 07:03:33,630][INFO]: train - epoch: 19, lr: 7.725e-05, train_loss: 0.122278
+[2023-04-21 07:05:23,492][INFO]: val - epoch: 19, val_loss: 0.1334828, val_average_precision: 0.8481849, val_average_precision_pass: 0.9026491, val_average_precision_drive: 0.7937207, val_binary_accuracy: 0.8708703, val_binary_accuracy_pass: 0.8653641, val_binary_accuracy_drive: 0.8763766
+[2023-04-21 07:05:23,597][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-019-0.848185.pth'
+[2023-04-21 07:05:23,605][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-018-0.845261.pth'
+[2023-04-21 07:13:59,117][INFO]: train - epoch: 20, lr: 6.4214e-05, train_loss: 0.1118182
+[2023-04-21 07:15:48,887][INFO]: val - epoch: 20, val_loss: 0.1324905, val_average_precision: 0.848633, val_average_precision_pass: 0.9047902, val_average_precision_drive: 0.7924758, val_binary_accuracy: 0.8731794, val_binary_accuracy_pass: 0.8699822, val_binary_accuracy_drive: 0.8763766
+[2023-04-21 07:15:48,990][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-020-0.848633.pth'
+[2023-04-21 07:15:48,997][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-019-0.848185.pth'
+[2023-04-21 07:24:26,025][INFO]: train - epoch: 21, lr: 5.2134e-05, train_loss: 0.1121519
+[2023-04-21 07:26:16,657][INFO]: val - epoch: 21, val_loss: 0.1340315, val_average_precision: 0.8474573, val_average_precision_pass: 0.9026315, val_average_precision_drive: 0.7922831, val_binary_accuracy: 0.8722913, val_binary_accuracy_pass: 0.8660746, val_binary_accuracy_drive: 0.878508
+[2023-04-21 07:26:16,760][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-021-0.847457.pth'
+[2023-04-21 07:26:16,768][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-020-0.848633.pth'
+[2023-04-21 07:34:54,688][INFO]: train - epoch: 22, lr: 4.1143e-05, train_loss: 0.1090228
+[2023-04-21 07:36:44,374][INFO]: val - epoch: 22, val_loss: 0.1331092, val_average_precision: 0.8471348, val_average_precision_pass: 0.9033687, val_average_precision_drive: 0.7909009, val_binary_accuracy: 0.8731794, val_binary_accuracy_pass: 0.8689165, val_binary_accuracy_drive: 0.8774423
+[2023-04-21 07:36:44,564][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-022-0.847135.pth'
+[2023-04-21 07:36:44,572][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-021-0.847457.pth'
+[2023-04-21 07:45:18,751][INFO]: train - epoch: 23, lr: 3.1361e-05, train_loss: 0.1097804
+[2023-04-21 07:47:08,568][INFO]: val - epoch: 23, val_loss: 0.1296616, val_average_precision: 0.8523182, val_average_precision_pass: 0.9069285, val_average_precision_drive: 0.7977079, val_binary_accuracy: 0.8772647, val_binary_accuracy_pass: 0.8746004, val_binary_accuracy_drive: 0.879929
+[2023-04-21 07:47:08,669][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-023-0.852318.pth'
+[2023-04-21 07:47:08,676][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-022-0.847135.pth'
+[2023-04-21 07:55:44,590][INFO]: train - epoch: 24, lr: 2.2895e-05, train_loss: 0.1065052
+[2023-04-21 07:57:34,506][INFO]: val - epoch: 24, val_loss: 0.12974, val_average_precision: 0.8539344, val_average_precision_pass: 0.9081476, val_average_precision_drive: 0.7997212, val_binary_accuracy: 0.8760213, val_binary_accuracy_pass: 0.8742451, val_binary_accuracy_drive: 0.8777975
+[2023-04-21 07:57:34,611][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-024-0.853934.pth'
+[2023-04-21 07:57:34,618][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-023-0.852318.pth'
+[2023-04-21 08:06:13,615][INFO]: train - epoch: 25, lr: 1.5838e-05, train_loss: 0.1023899
+[2023-04-21 08:08:04,852][INFO]: val - epoch: 25, val_loss: 0.130085, val_average_precision: 0.8544252, val_average_precision_pass: 0.9087372, val_average_precision_drive: 0.8001131, val_binary_accuracy: 0.8777975, val_binary_accuracy_pass: 0.8756661, val_binary_accuracy_drive: 0.879929
+[2023-04-21 08:08:04,965][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-025-0.854425.pth'
+[2023-04-21 08:08:04,973][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-024-0.853934.pth'
+[2023-04-21 08:16:43,167][INFO]: train - epoch: 26, lr: 1.0268e-05, train_loss: 0.1086337
+[2023-04-21 08:18:34,387][INFO]: val - epoch: 26, val_loss: 0.1296042, val_average_precision: 0.8557203, val_average_precision_pass: 0.9084143, val_average_precision_drive: 0.8030262, val_binary_accuracy: 0.8765542, val_binary_accuracy_pass: 0.8717584, val_binary_accuracy_drive: 0.8813499
+[2023-04-21 08:18:34,496][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-026-0.855720.pth'
+[2023-04-21 08:18:34,504][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-025-0.854425.pth'
+[2023-04-21 08:27:13,772][INFO]: train - epoch: 27, lr: 6.2451e-06, train_loss: 0.1088275
+[2023-04-21 08:29:04,445][INFO]: val - epoch: 27, val_loss: 0.129216, val_average_precision: 0.8561198, val_average_precision_pass: 0.9093894, val_average_precision_drive: 0.8028502, val_binary_accuracy: 0.8763766, val_binary_accuracy_pass: 0.871048, val_binary_accuracy_drive: 0.8817052
+[2023-04-21 08:29:04,555][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-027-0.856120.pth'
+[2023-04-21 08:29:04,564][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-026-0.855720.pth'
+[2023-04-21 08:37:41,738][INFO]: train - epoch: 28, lr: 3.8135e-06, train_loss: 0.1012027
+[2023-04-21 08:39:32,567][INFO]: val - epoch: 28, val_loss: 0.1286288, val_average_precision: 0.8565388, val_average_precision_pass: 0.9099702, val_average_precision_drive: 0.8031074, val_binary_accuracy: 0.8772647, val_binary_accuracy_pass: 0.8749556, val_binary_accuracy_drive: 0.8795737
+[2023-04-21 08:39:32,673][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-028-0.856539.pth'
+[2023-04-21 08:39:32,681][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-027-0.856120.pth'
+[2023-04-21 08:48:09,520][INFO]: train - epoch: 29, lr: 3e-06, train_loss: 0.1049416
+[2023-04-21 08:49:59,348][INFO]: val - epoch: 29, val_loss: 0.1289313, val_average_precision: 0.8565079, val_average_precision_pass: 0.9103346, val_average_precision_drive: 0.8026812, val_binary_accuracy: 0.8754885, val_binary_accuracy_pass: 0.8717584, val_binary_accuracy_drive: 0.8792185
+[2023-04-21 08:49:59,451][INFO]: Model saved to '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-029-0.856508.pth'
+[2023-04-21 08:49:59,459][INFO]: Model removed '/workdir/data/ball_action/experiments/sampling_weights_001/fold_4/model-028-0.856539.pth'
