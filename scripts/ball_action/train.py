@@ -113,7 +113,6 @@ def train_ball_action(config: dict, save_dir: Path,
         labels_filename=constants.labels_filename,
         videos_extension=constants.videos_extension,
         halves=constants.halves,
-        add_empty_actions=True,
     )
     val_dataset = ValActionDataset(
         val_data,
