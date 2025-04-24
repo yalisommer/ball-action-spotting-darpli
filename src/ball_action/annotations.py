@@ -47,6 +47,7 @@ def get_game_videos_data(
         if not half_video_path.exists():
             raise FileNotFoundError(f"Video file not found at {half_video_path}")
 
+        video_info = get_video_info(half_video_path)
         half_annotations = [
             annotation
             for annotation in annotations
@@ -58,6 +59,9 @@ def get_game_videos_data(
             {
                 "video_path": str(half_video_path),
                 "annotations": half_annotations,
+                "frame_count": video_info["frame_count"],
+                "game": game,
+                "half": half,
             }
         )
 
