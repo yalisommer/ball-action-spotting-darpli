@@ -23,4 +23,4 @@ python3 --version
 
 # Try a minimal test
 # echo "sanity test"
-python3 scripts/ball_action/train.py --experiment sampling_weights_001
+python3 scripts/ball_action/predict.py --experiment sampling_weights_001
