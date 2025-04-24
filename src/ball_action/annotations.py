@@ -36,7 +36,8 @@ def get_game_videos_data(
         raise FileNotFoundError(f"Label file not found at {label_path}")
 
     with open(label_path) as f:
-        annotations = json.load(f)
+        data = json.load(f)
+        annotations = data["annotations"]
     print(f"Found {len(annotations)} annotations")  # Debug print
 
     games_data = []
@@ -49,7 +50,7 @@ def get_game_videos_data(
         half_annotations = [
             annotation
             for annotation in annotations
-            if annotation["gameTime"][0] == str(half)
+            if annotation["gameTime"].startswith(f"{half} -")
         ]
         print(f"Found {len(half_annotations)} annotations for half {half}")  # Debug print
 
