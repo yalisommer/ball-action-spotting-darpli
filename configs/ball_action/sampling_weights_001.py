@@ -22,8 +22,7 @@ config = dict(
         clear_pred_window_size=9,
     ),
     metric_accuracy_threshold=0.5,
-    num_nvdec_workers=3,
-    num_opencv_workers=1,
+    num_workers=4,
     num_epochs=[6, 30],
     stages=["warmup", "train"],
     argus_params={

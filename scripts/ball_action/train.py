@@ -113,8 +113,7 @@ def train_ball_action(config: dict, save_dir: Path,
     train_loader = RandomSeekDataLoader(
         train_dataset,
         batch_size=config["batch_size"],
-        num_nvdec_workers=config["num_nvdec_workers"],
-        num_opencv_workers=config["num_opencv_workers"],
+        num_workers=config["num_workers"],
         gpu_id=device.index,
     )
     val_loader = SequentialDataLoader(

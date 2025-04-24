@@ -8,7 +8,7 @@ import cv2
 
 from src.ball_action.annotations import get_game_videos_data
 from src.utils import get_video_info, post_processing
-from src.frame_fetchers import NvDecFrameFetcher
+from src.frame_fetchers import OpencvFrameFetcher
 from src.target import VideoTarget
 from src.ball_action import constants
 
@@ -86,7 +86,7 @@ def visualize_video(half: int,
     video_prediction, video_pred_actions = load_video_predictions(game_prediction_dir, half)
 
     video_info = get_video_info(video_path)
-    frame_fetcher = NvDecFrameFetcher(video_path, gpu_id=gpu_id)
+    frame_fetcher = OpencvFrameFetcher(video_path, gpu_id=gpu_id)
     frame_fetcher.num_frames = video_info["frame_count"]
     video_writer = cv2.VideoWriter(str(visualize_video_path),
                                    cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),

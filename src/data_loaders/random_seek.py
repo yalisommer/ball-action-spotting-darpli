@@ -4,7 +4,7 @@ from multiprocessing import Queue
 
 from rosny import ProcessStream, ComposeStream
 
-from src.frame_fetchers import AbstractFrameFetcher, NvDecFrameFetcher, OpencvFrameFetcher
+from src.frame_fetchers import AbstractFrameFetcher, OpencvFrameFetcher
 from src.data_loaders.base_data_loader import BaseDataLoader
 from src.datasets import ActionDataset
 
@@ -35,32 +35,23 @@ class RandomSeekWorkerStream(ProcessStream):
 
 
 class RandomSeekWorkersStream(ComposeStream):
-    def __init__(self, streams: list[ProcessStream]):
-        super().__init__()
-        for index, stream in enumerate(streams):
-            self.__setattr__(f"random_seek_{index}", stream)
+    def __init__(self, streams: list[RandomSeekWorkerStream]):
+        super().__init__(streams)
 
 
 class RandomSeekDataLoader(BaseDataLoader):
     def __init__(self,
                  dataset: ActionDataset,
                  batch_size: int,
-                 num_nvdec_workers: int = 1,
-                 num_opencv_workers: int = 0,
+                 num_workers: int = 1,
                  gpu_id: int = 0):
-        self.num_nvdec_workers = num_nvdec_workers
-        self.num_opencv_workers = num_opencv_workers
+        self.num_workers = num_workers
         super().__init__(dataset=dataset, batch_size=batch_size, gpu_id=gpu_id)
 
     def init_workers_stream(self) -> RandomSeekWorkersStream:
-        nvdec_streams = [
+        streams = [
             RandomSeekWorkerStream(self.dataset, self._index_queue, self._result_queue,
-                                   NvDecFrameFetcher, self.gpu_id)
-            for _ in range(self.num_nvdec_workers)
+                                 OpencvFrameFetcher, self.gpu_id)
+            for _ in range(self.num_workers)
         ]
-        opencv_streams = [
-            RandomSeekWorkerStream(self.dataset, self._index_queue, self._result_queue,
-                                   OpencvFrameFetcher, self.gpu_id)
-            for _ in range(self.num_opencv_workers)
-        ]
-        return RandomSeekWorkersStream(nvdec_streams + opencv_streams)
+        return RandomSeekWorkersStream(streams)
