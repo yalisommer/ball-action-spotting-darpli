@@ -170,7 +170,8 @@ if __name__ == "__main__":
     args = parse_arguments()
     print("Experiment:", args.experiment)
 
-    config_path = constants.configs_dir / f"{args.experiment}.py"
+    # Use current directory for configs
+    config_path = Path("configs/ball_action") / f"{args.experiment}.py"
     if not config_path.exists():
         raise RuntimeError(f"Config '{config_path}' is not exists")
 
@@ -178,7 +179,8 @@ if __name__ == "__main__":
     print("Experiment config:")
     pprint(config, sort_dicts=False)
 
-    experiments_dir = constants.experiments_dir / args.experiment
+    # Use current directory for experiments
+    experiments_dir = Path("experiments") / args.experiment
     print("Experiment dir:", experiments_dir)
     if not experiments_dir.exists():
         experiments_dir.mkdir(parents=True, exist_ok=True)
