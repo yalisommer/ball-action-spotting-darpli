@@ -14,11 +14,18 @@ def get_game_videos_data(game: str,
     assert resolution in {"224p", "720p"}
 
     game_dir = constants.soccernet_dir / game
-    labels_json_path = game_dir / constants.labels_filename #"labels_challange_2024.json"
+    print(f"Looking for game data in: {game_dir}")
+    labels_json_path = game_dir / constants.labels_filename
+    print(f"Looking for labels file: {labels_json_path}")
+    
+    if not labels_json_path.exists():
+        raise FileNotFoundError(f"Labels file not found at {labels_json_path}")
+        
     with open(labels_json_path) as file:
         labels = json.load(file)
 
     annotations = labels["annotations"]
+    print(f"Found {len(annotations)} annotations")
 
     halves_set = set()
     for annotation in annotations:
@@ -26,15 +33,24 @@ def get_game_videos_data(game: str,
         halves_set.add(half)
         annotation["half"] = half
     halves = sorted(halves_set)
+    print(f"Found halves: {halves}")
 
     half2video_data = dict()
     for half in halves:
-        half_video_path = str(game_dir / f"{resolution}.{constants.videos_extension}") # f"{half}_{resolution}.mkv")
+        half_video_path = str(game_dir / f"{resolution}.{constants.videos_extension}")
+        print(f"Looking for video file: {half_video_path}")
+        
+        if not Path(half_video_path).exists():
+            raise FileNotFoundError(f"Video file not found at {half_video_path}")
+            
+        video_info = get_video_info(half_video_path)
+        print(f"Video info: {video_info}")
+        
         half2video_data[half] = dict(
             video_path=half_video_path,
             game=game,
             half=half,
-            **get_video_info(half_video_path),
+            **video_info,
             frame_index2action=dict(),
         )
 
