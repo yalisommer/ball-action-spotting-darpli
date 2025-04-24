@@ -55,6 +55,14 @@ def get_game_videos_data(
         ]
         print(f"Found {len(half_annotations)} annotations for half {half}")  # Debug print
 
+        # Create frame_index2action mapping
+        frame_index2action = {}
+        for annotation in half_annotations:
+            # Convert position (in milliseconds) to frame index
+            position_ms = int(annotation["position"])
+            frame_index = int(position_ms * video_info["fps"] / 1000)
+            frame_index2action[frame_index] = annotation["label"]
+
         games_data.append(
             {
                 "video_path": str(half_video_path),
@@ -62,6 +70,7 @@ def get_game_videos_data(
                 "frame_count": video_info["frame_count"],
                 "game": game,
                 "half": half,
+                "frame_index2action": frame_index2action,
             }
         )
 
