@@ -18,5 +18,5 @@ module load python/3.11.11  # or whatever version is required
 source ~/myEnv/bin/activate
 
 # Run the training script
-print("sanity test")
+echo "sanity test"
 # python3 scripts/ball_action/train.py --experiment sampling_weights_001
