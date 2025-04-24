@@ -80,7 +80,8 @@ def predict_video(predictor: MultiDimStackerPredictor,
             predictor, video_path, video_info["frame_count"]
         )
         # Scale frame indexes to match expected fps
-        frame_indexes = (frame_indexes / fps_scale).astype(int)
+        frame_indexes = np.array(frame_indexes) / fps_scale
+        frame_indexes = frame_indexes.astype(int)
         np.savez(
             raw_predictions_path,
             frame_indexes=frame_indexes,
