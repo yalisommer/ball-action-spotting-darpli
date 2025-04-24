@@ -36,7 +36,8 @@ class RandomSeekWorkerStream(ProcessStream):
 
 class RandomSeekWorkersStream(ComposeStream):
     def __init__(self, streams: list[RandomSeekWorkerStream]):
-        super().__init__({f"worker_{i}": stream for i, stream in enumerate(streams)})
+        self._streams = {f"worker_{i}": stream for i, stream in enumerate(streams)}
+        super().__init__()
 
 
 class RandomSeekDataLoader(BaseDataLoader):
