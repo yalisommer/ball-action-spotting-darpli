@@ -22,5 +22,5 @@ which python3
 python3 --version
 
 # Try a minimal test
-echo "sanity test"
-# python3 scripts/ball_action/train.py --experiment sampling_weights_001
+# echo "sanity test"
+python3 scripts/ball_action/train.py --experiment sampling_weights_001
