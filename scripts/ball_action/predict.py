@@ -64,7 +64,9 @@ def predict_video(predictor: MultiDimStackerPredictor,
     video_path = game_dir / f"{RESOLUTION}.{constants.videos_extension}" #f"{half}_{RESOLUTION}.mkv"
     video_info = get_video_info(video_path)
     print("Video info:", video_info)
-    assert video_info["fps"] == constants.video_fps
+    # Scale frame indexes if fps is different
+    fps_scale = video_info["fps"] / constants.video_fps
+    print(f"FPS scale: {fps_scale}")
 
     raw_predictions_path = game_prediction_dir / f"{half}_raw_predictions.npz"
 
@@ -77,6 +79,8 @@ def predict_video(predictor: MultiDimStackerPredictor,
         frame_indexes, raw_predictions = get_raw_predictions(
             predictor, video_path, video_info["frame_count"]
         )
+        # Scale frame indexes to match expected fps
+        frame_indexes = (frame_indexes / fps_scale).astype(int)
         np.savez(
             raw_predictions_path,
             frame_indexes=frame_indexes,
