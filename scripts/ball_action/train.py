@@ -86,7 +86,13 @@ def train_ball_action(config: dict, save_dir: Path,
         model.nn_module = torch.compile(model.nn_module, **config["torch_compile"])
 
     device = torch.device(argus_params["device"][0])
-    train_data = get_videos_data(train_games)
+    train_data = get_videos_data(
+        games=train_games,
+        soccernet_dir=constants.soccernet_dir,
+        labels_filename=constants.labels_filename,
+        videos_extension=constants.videos_extension,
+        halves=constants.halves,
+    )
     videos_sampling_weights = get_videos_sampling_weights(
         train_data, **config["train_sampling_weights"],
     )
@@ -101,7 +107,14 @@ def train_ball_action(config: dict, save_dir: Path,
         frame_index_shaker=frame_index_shaker,
     )
     print(f"Train dataset len {len(train_dataset)}")
-    val_data = get_videos_data(val_games, add_empty_actions=True)
+    val_data = get_videos_data(
+        games=val_games,
+        soccernet_dir=constants.soccernet_dir,
+        labels_filename=constants.labels_filename,
+        videos_extension=constants.videos_extension,
+        halves=constants.halves,
+        add_empty_actions=True,
+    )
     val_dataset = ValActionDataset(
         val_data,
         constants.classes,
