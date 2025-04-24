@@ -8,82 +8,95 @@ from src.utils import get_video_info, post_processing
 from src.ball_action import constants
 
 
-def get_game_videos_data(game: str,
-                         resolution="720p",
-                         add_empty_actions: bool = False) -> list[dict]:
-    assert resolution in {"224p", "720p"}
+def get_game_videos_data(
+    game: str,
+    soccernet_dir: Path,
+    labels_filename: str,
+    videos_extension: str,
+    halves: list[int],
+) -> list[dict]:
+    """Get data for all videos of a game.
 
-    game_dir = constants.soccernet_dir / game
-    print(f"Looking for game data in: {game_dir}")
-    labels_json_path = game_dir / constants.labels_filename
-    print(f"Looking for labels file: {labels_json_path}")
-    
-    if not labels_json_path.exists():
-        raise FileNotFoundError(f"Labels file not found at {labels_json_path}")
-        
-    with open(labels_json_path) as file:
-        labels = json.load(file)
+    Args:
+        game: Game path relative to soccernet_dir.
+        soccernet_dir: Path to SoccerNet directory.
+        labels_filename: Name of the labels file.
+        videos_extension: Extension of the video files.
+        halves: List of halves to process.
 
-    annotations = labels["annotations"]
-    print(f"Found {len(annotations)} annotations")
+    Returns:
+        List of dictionaries with video data.
+    """
+    game_dir = soccernet_dir / game
+    print(f"Looking for game data in: {game_dir}")  # Debug print
 
-    halves_set = set()
-    for annotation in annotations:
-        half = int(annotation["gameTime"].split(" - ")[0])
-        halves_set.add(half)
-        annotation["half"] = half
-    halves = sorted(halves_set)
-    print(f"Found halves: {halves}")
+    label_path = game_dir / labels_filename
+    print(f"Looking for labels at: {label_path}")  # Debug print
+    if not label_path.exists():
+        raise FileNotFoundError(f"Label file not found at {label_path}")
 
-    half2video_data = dict()
+    with open(label_path) as f:
+        annotations = json.load(f)
+    print(f"Found {len(annotations)} annotations")  # Debug print
+
+    games_data = []
     for half in halves:
-        half_video_path = str(game_dir / f"{resolution}.{constants.videos_extension}")
-        print(f"Looking for video file: {half_video_path}")
-        
-        if not Path(half_video_path).exists():
+        half_video_path = game_dir / f"{half}_{videos_extension}"
+        print(f"Looking for video at: {half_video_path}")  # Debug print
+        if not half_video_path.exists():
             raise FileNotFoundError(f"Video file not found at {half_video_path}")
-            
-        video_info = get_video_info(half_video_path)
-        print(f"Video info: {video_info}")
-        
-        half2video_data[half] = dict(
-            video_path=half_video_path,
-            game=game,
-            half=half,
-            **video_info,
-            frame_index2action=dict(),
+
+        half_annotations = [
+            annotation
+            for annotation in annotations
+            if annotation["gameTime"][0] == str(half)
+        ]
+        print(f"Found {len(half_annotations)} annotations for half {half}")  # Debug print
+
+        games_data.append(
+            {
+                "video_path": str(half_video_path),
+                "annotations": half_annotations,
+            }
         )
 
-    for annotation in annotations:
-        video_data = half2video_data[annotation["half"]]
-        frame_index = round(float(annotation["position"]) * video_data["fps"] * 0.001)
-        video_data["frame_index2action"][frame_index] = annotation["label"]
-
-    if add_empty_actions:
-        for half in halves:
-            video_data = half2video_data[half]
-            prev_frame_index = -1
-            for frame_index in sorted(video_data["frame_index2action"].keys()):
-                if prev_frame_index != -1:
-                    empty_frame_index = (prev_frame_index + frame_index) // 2
-                    if empty_frame_index not in video_data["frame_index2action"]:
-                        video_data["frame_index2action"][empty_frame_index] = "EMPTY"
-                prev_frame_index = frame_index
-
-    return list(half2video_data.values())
-
-
-def get_videos_data(games: list[str],
-                    resolution="720p",
-                    add_empty_actions: bool = False) -> list[dict]:
-    games_data = list()
-    for game in games:
-        games_data += get_game_videos_data(
-            game,
-            resolution=resolution,
-            add_empty_actions=add_empty_actions
-        )
     return games_data
+
+
+def get_videos_data(
+    games: list[str],
+    soccernet_dir: Path,
+    labels_filename: str,
+    videos_extension: str,
+    halves: list[int],
+) -> list[dict]:
+    """Get data for all videos.
+
+    Args:
+        games: List of game paths relative to soccernet_dir.
+        soccernet_dir: Path to SoccerNet directory.
+        labels_filename: Name of the labels file.
+        videos_extension: Extension of the video files.
+        halves: List of halves to process.
+
+    Returns:
+        List of dictionaries with video data.
+    """
+    videos_data = []
+    for game in games:
+        try:
+            game_videos_data = get_game_videos_data(
+                game=game,
+                soccernet_dir=soccernet_dir,
+                labels_filename=labels_filename,
+                videos_extension=videos_extension,
+                halves=halves,
+            )
+            videos_data.extend(game_videos_data)
+        except FileNotFoundError as e:
+            print(f"Warning: {e}")
+            continue
+    return videos_data
 
 
 def raw_predictions_to_actions(frame_indexes: list[int], raw_predictions: np.ndarray):
@@ -190,3 +203,67 @@ def get_videos_sampling_weights(videos_data: list[dict],
         )
         videos_sampling_weights.append(video_sampling_weights)
     return videos_sampling_weights
+
+
+def get_ball_actions(
+    games: list[str],
+    soccernet_dir: Path,
+    labels_filename: str,
+    videos_extension: str,
+    halves: list[int],
+) -> list[dict]:
+    """Get ball actions for all videos.
+
+    Args:
+        games: List of game paths relative to soccernet_dir.
+        soccernet_dir: Path to SoccerNet directory.
+        labels_filename: Name of the labels file.
+        videos_extension: Extension of the video files.
+        halves: List of halves to process.
+
+    Returns:
+        List of dictionaries with ball actions.
+    """
+    videos_data = get_videos_data(
+        games=games,
+        soccernet_dir=soccernet_dir,
+        labels_filename=labels_filename,
+        videos_extension=videos_extension,
+        halves=halves,
+    )
+    ball_actions = []
+    for video_data in videos_data:
+        ball_actions.extend(video_data["annotations"])
+    return ball_actions
+
+
+def get_ball_actions_sampling_weights(
+    games: list[str],
+    soccernet_dir: Path,
+    labels_filename: str,
+    videos_extension: str,
+    halves: list[int],
+) -> list[dict]:
+    """Get ball actions sampling weights for all videos.
+
+    Args:
+        games: List of game paths relative to soccernet_dir.
+        soccernet_dir: Path to SoccerNet directory.
+        labels_filename: Name of the labels file.
+        videos_extension: Extension of the video files.
+        halves: List of halves to process.
+
+    Returns:
+        List of dictionaries with ball actions sampling weights.
+    """
+    videos_data = get_videos_data(
+        games=games,
+        soccernet_dir=soccernet_dir,
+        labels_filename=labels_filename,
+        videos_extension=videos_extension,
+        halves=halves,
+    )
+    ball_actions_sampling_weights = []
+    for video_data in videos_data:
+        ball_actions_sampling_weights.extend(video_data["sampling_weights"])
+    return ball_actions_sampling_weights
