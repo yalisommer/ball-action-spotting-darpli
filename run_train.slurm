@@ -2,25 +2,27 @@
 #SBATCH --job-name=ball_action_train
 #SBATCH --output=logs/ball_action_train_%j.log
 #SBATCH --error=logs/ball_action_train_%j.err
-#SBATCH --time=00:10:00
+#SBATCH --time=00:15:00
 #SBATCH --partition=gpus
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --gres=gpu:1
-#SBATCH --export=ALL  # Ensure environment variables are preserved
+#SBATCH --export=ALL
 
-# Confirm you're using bash
-echo "Shell: $SHELL"
+# Ensure logs directory exists
+mkdir -p logs
 
-# Optional: load modules
-module load python/3.10  # Try a safer default module if 3.11 isn't available
+# Load module system
+source /etc/profile
+module load python/3.10  # Or whatever version you want
 
-# Confirm Python works
-which python3
-python3 --version
+# Activate virtual environment
+source ~/myEnv/bin/activate
 
-# Try a minimal test
-# echo "sanity test"
+# Add current directory to Python path
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+# Run your training script
 python3 scripts/ball_action/predict.py --experiment sampling_weights_001
