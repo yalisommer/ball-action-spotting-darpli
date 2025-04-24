@@ -6,7 +6,7 @@ experiments_dir = ball_action_dir / "experiments"
 predictions_dir = ball_action_dir / "predictions"
 visualizations_dir = ball_action_dir / "visualizations"
 
-soccernet_dir = soccernet_dir / "spotting-ball-2024"
+soccernet_dir = soccernet_dir / "spotting-ball-2023"
 
 fold_games = [
     "england_efl/2019-2020/2019-10-01 - Leeds United - West Bromwich",
@@ -31,7 +31,7 @@ challenge_games = [
 # ]
 
 labels_filename = "Labels-ball.json"
-videos_extension = 'mp4'
+videos_extension = 'mkv'
 
 classes = ['PASS', 'DRIVE', 'HEADER', 'HIGH PASS', 'OUT', 'CROSS', 'THROW IN',
            'SHOT', 'BALL PLAYER BLOCK', 'PLAYER SUCCESSFUL TACKLE', 'FREE KICK',
